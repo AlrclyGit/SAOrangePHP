@@ -19,7 +19,7 @@ class BaseValidate extends Validate
     public function goCheck()
     {
         $params = input('param.');
-        $result = $this->batch->check($params);
+        $result = $this->batch()->check($params);
         if (!$result) {
             throw new ParameterException([
                 'msg' => $this->error

@@ -10,7 +10,9 @@
 namespace app\lib\exception;
 
 
-class BaseException extends \Exception
+use think\Exception;
+
+class BaseException extends Exception
 {
     // HTTP 状态码
     public $code = 400;

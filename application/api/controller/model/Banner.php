@@ -16,8 +16,8 @@ class Banner extends BaseModel
     /*
      *
      */
-    public function getBannerByID()
+    public static function getBannerByID()
     {
-
+        return null;
     }
 }

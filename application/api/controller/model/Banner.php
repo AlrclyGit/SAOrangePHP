@@ -13,11 +13,5 @@ namespace app\api\controller\model;
 class Banner extends BaseModel
 {
 
-    /*
-     *
-     */
-    public static function getBannerByID($id)
-    {
 
-    }
 }

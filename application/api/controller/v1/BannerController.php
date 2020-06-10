@@ -25,12 +25,15 @@ class BannerController extends BaseController
      */
     public function getBanner($id)
     {
+        //
         (new IDMustBePositiveInt())->goCheck();
-        $banner = Banner::getBannerByID($id);
-        if(!$banner){
+        //
+        $banner = Banner::get($id);
+        if($banner){
+            return $banner;
+        }else{
             throw new BannerMissException();
         }
-        return $banner;
     }
 
 }

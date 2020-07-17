@@ -10,8 +10,8 @@
 namespace app\api\controller\v1;
 
 
-use app\api\controller\model\Banner;
-use app\api\controller\validate\IDMustBePositiveInt;
+use app\api\model\Banner;
+use app\api\validate\IDMustBePositiveInt;
 use app\lib\exception\BannerMissException;
 
 class BannerController extends BaseController
@@ -28,7 +28,7 @@ class BannerController extends BaseController
         //
         (new IDMustBePositiveInt())->goCheck();
         //
-        $banner = Banner::get($id);
+        $banner = Banner::getBannerByID($id);
         if($banner){
             return $banner;
         }else{

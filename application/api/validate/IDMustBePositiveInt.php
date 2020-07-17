@@ -7,13 +7,17 @@
  * Created by SAOrangePHP制作委员会.
  */
 
-namespace app\api\controller\validate;
+namespace app\api\validate;
 
 class IDMustBePositiveInt extends BaseValidate
 {
 
     protected $rule = [
         'id' => 'require|isPositiveInteger'
+    ];
+
+    protected $message = [
+        'id' => '必须是正整数'
     ];
 
 }

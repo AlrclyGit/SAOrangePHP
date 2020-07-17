@@ -7,7 +7,7 @@
  * Created by SAOrangePHP制作委员会.
  */
 
-namespace app\api\controller\validate;
+namespace app\api\validate;
 
 
 use app\lib\exception\ParameterException;
@@ -16,6 +16,9 @@ use think\Validate;
 class BaseValidate extends Validate
 {
 
+    /*
+     *
+     */
     public function goCheck()
     {
         $params = input('param.');
@@ -37,8 +40,25 @@ class BaseValidate extends Validate
         if (is_numeric($value) && is_int($value + 0) && ($value + 0) > 0) {
             return true;
         } else {
-            return $field . '必须是正整数';
+            return false;
         }
+    }
+
+    /*
+     * ID必须为整型
+     */
+    protected function checkIDs($value)
+    {
+        $values = explode(',', $value);
+        if (empty($values)) {
+            return false;
+        }
+        foreach ($values as $id) {
+            if (!$this->isPositiveInteger($id)) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }

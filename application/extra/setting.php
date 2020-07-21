@@ -9,5 +9,6 @@
 
 return [
     'img_prefix' => 'http://tp.alrcly.com', // 本地图片前缀
-    'oss_img_prefix' => 'http://oss.alrcly.com' // OSS图片前缀
+    'oss_img_prefix' => 'http://oss.alrcly.com', // OSS图片前缀
+    'token_expire_in' => 7200
 ];

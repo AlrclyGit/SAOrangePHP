@@ -49,4 +49,19 @@ class ProductController extends BaseController
         $products = $products->hidden(['summary']);
         return $products;
     }
+
+    /*
+     *
+     */
+    public function getOne($id)
+    {
+        (new IDMustBePositiveInt())->goCheck();
+        $product = Product::getProductDetail($id);
+        if (!$product) {
+            throw new ProductException();
+        } else {
+            return $product;
+        }
+    }
+
 }

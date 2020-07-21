@@ -26,6 +26,22 @@ class Product extends BaseModel
     /*
      *
      */
+    public function images()
+    {
+        return $this->hasMany('ProductImage', 'product_id', 'id')->order('order ASC');
+    }
+
+    /*
+     *
+     */
+    public function properties()
+    {
+        return $this->hasMany('ProductProperty', 'product_id', 'id');
+    }
+
+    /*
+     *
+     */
     public static function getMostRecent($count)
     {
         return self::order('create_time DESC')
@@ -38,8 +54,18 @@ class Product extends BaseModel
      */
     public static function getProductsByCategoryID($categoryID)
     {
-        return self::where('category_id',$categoryID)
+        return self::where('category_id', $categoryID)
             ->select();
     }
+
+    /*
+     *
+     */
+    public static function getProductDetail($id)
+    {
+        $products = self::with(['images.imgUrl', 'properties'])->find($id);
+        return $products;
+    }
+
 
 }

@@ -18,16 +18,16 @@ class BannerController extends BaseController
 {
 
     /*
-     * 获取指定id的banner信息Ø
+     * 获取指定id的banner信息
      * @url /banner/:id
      * @http GET
      * @id banner的id号
      */
     public function getBanner($id)
     {
-        //
+        // 参数合理性验证
         (new IDMustBePositiveInt())->goCheck();
-        //
+        // 通过ID获取Banner
         $banner = Banner::getBannerByID($id);
         if($banner){
             return $banner;

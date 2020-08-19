@@ -1,6 +1,6 @@
 <?php
 /**
- * Name:
+ * Name: 配置文件
  * User: 萧俊介
  * Date: 2020/7/18
  * Time: 7:20 下午
@@ -9,5 +9,6 @@
 
 
 return [
-    'token_salt' => 'youaremyonlylove'
+    'token_salt' => 'youaremyonlylove',
+    'pay_back_url' => 'https://tp.alrcly.com/aip/v1/pay/notify'
 ];

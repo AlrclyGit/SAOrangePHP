@@ -1,6 +1,6 @@
 <?php
 /**
- * Name: 商品控制器
+ * Name: 专题控制器
  * User: 萧俊介
  * Date: 2020/7/17
  * Time: 3:49 下午
@@ -19,6 +19,7 @@ class ThemeController extends BaseController
 {
 
     /*
+     * 获取任意组合的专题信息
      * $url /theme?ids=id1,id2,id3
      * @return 一组theme模型
      */
@@ -36,6 +37,7 @@ class ThemeController extends BaseController
     }
 
     /*
+     * 获取某一专题的商品信息
      * @url /theme:id
      */
     public function getComplexOne($id)

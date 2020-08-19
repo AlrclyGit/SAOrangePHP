@@ -1,6 +1,6 @@
 <?php
 /**
- * Name: 最近商品控制器
+ * Name: 商品控制器
  * User: 萧俊介
  * Date: 2020/7/17
  * Time: 7:05 下午
@@ -19,11 +19,10 @@ class ProductController extends BaseController
 {
 
     /*
-     *
+     * 获取最新商品
      */
     public function getRecent($count = 15)
     {
-        //
         (new Count())->goCheck();
         //
         $products = Product::getMostRecent($count);
@@ -35,7 +34,7 @@ class ProductController extends BaseController
     }
 
     /*
-     *
+     * 获取某分类下的所有商品
      */
     public function getAllInCategory($id)
     {
@@ -62,6 +61,13 @@ class ProductController extends BaseController
         } else {
             return $product;
         }
+    }
+
+    /*
+     *
+     */
+    public function deleteOne($id){
+
     }
 
 }

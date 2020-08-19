@@ -10,7 +10,7 @@
 namespace app\api\controller\v1;
 
 
-use app\api\service\UserToken;
+use app\api\service\UserTokenService;
 use app\api\validate\TokenGet;
 
 class TokenController extends BaseController
@@ -24,7 +24,7 @@ class TokenController extends BaseController
         //
         (new TokenGet())->goCheck();
         //
-        $ut = new UserToken($code);
+        $ut = new UserTokenService($code);
         $token = $ut->get();
         return [
             'token' => $token
